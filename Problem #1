@@ -1,0 +1,54 @@
+Problem:
+	Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+
+For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+
+Solution:
+
+import java.util.*;
+public class Problem1
+{
+	public static void main(String[] args) {
+	    int i,j;
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Enter size of the list:");
+	    int n=sc.nextInt();
+	    int a[]=new int[n];
+	    System.out.println("Enter list elements:");
+	    for(i=0;i<n;i++)
+	        a[i]=sc.nextInt();
+	    System.out.print("Enter k value:");
+	    int k=sc.nextInt();
+	    System.out.println(pair(a,n,k));
+	}
+	static boolean pair(int a[],int n,int k) {
+	    int i,j;
+	    for(i=0;i<n-1;i++) {
+	        for(j=i+1;j<n;j++) {
+	            if(a[i]+a[j]==k) {
+	                System.out.println("pairs:"+a[i]+","+a[j]);
+	                return true;
+	            }
+	        }
+	    }
+	    return false;
+	}
+	
+}
+
+Output:
+1)
+Enter size of the list:2
+Enter list elements:
+4
+6
+Enter k value:3
+false
+
+2)
+Enter size of the list:2
+Enter list elements:
+4
+6
+Enter k value:3
+false
