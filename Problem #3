@@ -1,0 +1,27 @@
+Problem:
+Implement an autocomplete system. That is, given a query string s and a set of all possible query strings, return all strings in the set that have s as a prefix.
+
+For example, given the query string de and the set of strings [dog, deer, deal], return [deer, deal].
+
+solution:
+
+s=input("Enter a query string: ")
+l=input("Enter strings: ").split()
+s_len=len(s)
+new_set=set()
+for ele in l:
+    if ele[:s_len]==s:
+        new_set.add(ele)
+print("resultant set of strings: ",list(new_set))
+
+       
+outputs:
+1)
+Enter a query string: del
+Enter strings: doghr delete dedns d deloes dkskcn f sasd
+resultant set of strings:  ['delete', 'deloes']
+
+2)
+Enter a query string: de
+Enter strings: dog deer deal
+resultant set of strings:  ['deer', 'deal']     
