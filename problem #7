@@ -1,0 +1,32 @@
+Problem #7:
+
+Given an integer k and a string s, find the length of the longest substring that contains at most k distinct characters.
+
+For example, given s = "abcba" and k = 2, the longest substring with k distinct characters is "bcb".
+
+solution:
+
+string=input("Enter a string: ")
+k=int(input("Enter k value: "))
+n=len(string)
+ls=""
+for i in range(n-k+1):
+    temp=""
+    for j in range(n,k-1,-1):
+        if len(set(string[i:j]))==k:
+            temp=string[i:j]
+            break
+    if len(temp)>len(ls):
+        ls=temp
+print("the longest substring with",k,"distinct characters is",ls)
+        
+            
+ output:
+ 1)
+ Enter a string: abcba
+Enter k value: 2
+the longest substring with 2 distinct characters is bcb
+2)
+Enter a string: abcbadeds
+Enter k value: 3
+the longest substring with 3 distinct characters is abcba           
