@@ -1,0 +1,29 @@
+Problem #6:
+Implement a job scheduler which takes in a function f and an integer n, and calls f after n milliseconds.
+
+solution:
+
+import time
+
+def f():
+    print("Hello")
+    print(time.ctime())
+def scheduler(f, n):
+    time.sleep(n*0.001)
+    f()
+n=int(input("Enter n value: "))
+print(time.ctime())
+scheduler(f,n)
+
+
+output:
+1)
+Enter n value: 5000
+Thu May 26 04:46:51 2022
+Hello
+Thu May 26 04:46:56 2022
+2)
+Enter n value: 25000
+Thu May 26 04:50:01 2022
+Hello
+Thu May 26 04:50:26 2022
