@@ -1,0 +1,42 @@
+problem:
+Given a string of round, curly, and square open and closing brackets, return whether the brackets are balanced (well-formed).
+
+For example, given the string "([])[]({})", you should return true.
+
+Given the string "([)]" or "((()", you should return false.
+
+solution:
+
+def balanced_brackets(string):
+    l = []
+    open_brackets = ["[","{","("]
+    closed_brackets = ["]","}",")"]
+    for i in string:
+        if i in open_brackets:
+            l.append(i)
+        elif i in closed_brackets:
+            position = closed_brackets.index(i)
+            if ((len(l) > 0) and (open_brackets[position] == l[len(l)-1])):
+                l.pop()
+            else:
+                return "False"
+    if len(l) == 0:
+        return "True"
+    else:
+        return "False"
+  
+string = input("Enter a string")
+print(balanced_brackets(string))
+
+output:
+1)
+Enter a string: ([])[]({})
+True
+
+2)
+Enter a string: ([)]
+False
+
+3)
+Enter a string: ((()
+False
