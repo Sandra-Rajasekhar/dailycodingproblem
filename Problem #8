@@ -1,0 +1,55 @@
+Problem:
+
+You run an e-commerce website and want to record the last N order ids in a log. Implement a data structure to accomplish this, with the following API:
+
+record(order_id): adds the order_id to the log
+get_last(i): gets the ith last element from the log. i is guaranteed to be smaller than or equal to N.
+
+solution:
+
+c_i=0
+n=int(input("Enter n value: "))
+records=[-1]*n
+def record(order_id):
+    global c_i
+    records[c_i]=order_id
+    c_i=(c_i+1)%n
+    
+def get_last(i):
+    return records[(c_i-i+n)%n]
+    
+while True:
+    choice=int(input("Enter your choice: 1.record(order_id) 2.get_last(i) 3.exit"))
+    if choice==1:
+        record(int(input("Enter order_id: ")))
+    elif choice==2:
+        i=int(input("Enter i value: "))
+        if i<n:
+            print(get_last(i))
+            
+    elif choice==3:
+        break
+    else:
+        print("Enter valid input")
+
+output:
+1)
+Enter n value: 5
+Enter your choice: 1.record(order_id) 2.get_last(i) 3.exit: 1
+Enter order_id: 1
+Enter your choice: 1.record(order_id) 2.get_last(i) 3.exit: 1
+Enter order_id: 2
+Enter your choice: 1.record(order_id) 2.get_last(i) 3.exit: 1
+Enter order_id: 3
+Enter your choice: 1.record(order_id) 2.get_last(i) 3.exit: 1
+Enter order_id: 4
+Enter your choice: 1.record(order_id) 2.get_last(i) 3.exit: 2
+Enter i value: 2
+3
+Enter your choice: 1.record(order_id) 2.get_last(i) 3.exit: 1
+Enter order_id: 5
+Enter your choice: 1.record(order_id) 2.get_last(i) 3.exit: 2
+Enter i value: 4
+2
+Enter your choice: 1.record(order_id) 2.get_last(i) 3.exit: 3
+
