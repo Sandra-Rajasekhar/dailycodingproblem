@@ -1,0 +1,26 @@
+problem:
+Given a string, find the longest palindromic contiguous substring. If there are more than one with the maximum length, return any one.
+
+For example, the longest palindromic substring of "aabcdcb" is "bcdcb". The longest palindromic substring of "bananas" is "anana".
+
+solution:
+
+s=input("Enter a string: ")
+l=""
+for i in range(len(s)):
+    temp=""
+    for j in range(len(s),i-1,-1):
+        if s[i:j]==s[i:j][::-1]:
+            temp=s[i:j]
+            break
+    if len(temp)>len(l):
+        l=temp
+print(l)
+
+output:
+1)
+Enter a string: bananas
+anana
+2)
+Enter a string: aabcdcb
+bcdcb
