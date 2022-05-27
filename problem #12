@@ -1,0 +1,68 @@
+problem:
+
+Implement a stack that has the following methods:
+
+push(val), which pushes an element onto the stack
+pop(), which pops off and returns the topmost element of the stack. If there are no elements in the stack, then it should throw an error or return null.
+max(), which returns the maximum value in the stack currently. If there are no elements in the stack, then it should throw an error or return null.
+
+solution:
+
+class Stack():
+    def __init__(self):
+        self.stack=[]
+    def push(self,value):
+        self.stack.append(value)
+    def pop(self):
+        if self.stack:
+            return self.stack.pop()
+    def maximum(self):
+        if self.stack:
+            return self.stack[-1]
+s=Stack()
+while True:
+    ch=int(input("Enter your choice: 1.push 2.pop 3.max 4.exit"))
+    if ch==1:
+        s.push(int(input("Enter value to push: ")))
+    elif ch==2:
+        print(s.pop())
+    elif ch==3:
+        print("maximum value in stack: ",s.maximum())
+    elif ch==4:
+        break
+    else:
+        print("Enter valid choice")
+        
+output:
+Enter your choice: 1.push 2.pop 3.max 4.exit: 1
+Enter value to push: 1
+Enter your choice: 1.push 2.pop 3.max 4.exit: 1
+Enter value to push: 2
+Enter your choice: 1.push 2.pop 3.max 4.exit: 1
+Enter value to push: 3
+Enter your choice: 1.push 2.pop 3.max 4.exit: 1
+Enter value to push: 4
+Enter your choice: 1.push 2.pop 3.max 4.exit: 3
+maximum value in stack:  4
+Enter your choice: 1.push 2.pop 3.max 4.exit: 1
+Enter value to push: 5
+Enter your choice: 1.push 2.pop 3.max 4.exit: 3
+maximum value in stack:  5
+Enter your choice: 1.push 2.pop 3.max 4.exit: 2
+5
+Enter your choice: 1.push 2.pop 3.max 4.exit: 2
+4
+Enter your choice: 1.push 2.pop 3.max 4.exit: 3
+maximum value in stack:  3
+Enter your choice: 1.push 2.pop 3.max 4.exit: 5
+Enter valid choice
+Enter your choice: 1.push 2.pop 3.max 4.exit: 2
+3
+Enter your choice: 1.push 2.pop 3.max 4.exit: 2
+2
+Enter your choice: 1.push 2.pop 3.max 4.exit: 3
+maximum value in stack:  1
+Enter your choice: 1.push 2.pop 3.max 4.exit: 6
+Enter valid choice
+Enter your choice: 1.push 2.pop 3.max 4.exit: 4
+
