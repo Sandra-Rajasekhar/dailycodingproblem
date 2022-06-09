@@ -1,0 +1,35 @@
+problem:
+
+The edit distance between two strings refers to the minimum number of character insertions, deletions, and substitutions required to change one string to the other. For example, the edit distance between “kitten” and “sitting” is three: substitute the “k” for “s”, substitute the “e” for “i”, and append a “g”.
+
+Given two strings, compute the edit distance between them.
+
+solution:
+
+
+s1=input("Enter first string: ")
+s2=input("Enter second string: ")
+i=0
+c=0
+while i<len(s1) and i<len(s2):
+    if s1[i]!=s2[i]:
+        c+=1                   #substitutions
+    i=i+1
+if i<len(s1):
+    c+=len(s1)-i               #deletions
+if i<len(s2):
+    c+=len(s2)-i               #insertions
+print(c)
+        
+        
+output:
+1)
+Enter first string: abcdef
+Enter second string: be
+6
+
+2)
+Enter first string: kitten
+Enter second string: sitting
+3
+
