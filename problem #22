@@ -1,0 +1,23 @@
+problem:
+
+Given a list of integers, return the largest product that can be made by multiplying any three integers.
+
+For example, if the list is [-10, -10, 5, 2], we should return 500, since that's -10 * -10 * 5.
+
+solution:
+
+
+list1=list(map(int,input("Enter list of integers: ").split()))
+if len(list1)>=3:
+    list1=list(map(lambda value:abs(value),list1))
+    list1.sort(reverse=True)
+    print("largest sum is",(list1[0]*list1[1]*list1[2]))
+else:
+    print("The list must contain atleast three integers")
+    
+
+output:
+
+1)Enter list of integers: -10 -10 5 2
+largest sum is 500
+
